@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="practice01.dao.BoardDao"> <!-- namespace => dao fqcn -->
+
+	<resultMap id="boardResultMap" type="Board">
+		<id property="boardNo" column="bno" />
+		<result property="title" column="title" />
+		<result property="content" column="content"/>
+		<result property="createDate" column="cre_dt"/>
+		<result property="viewCount" column="view_cnt"/>
+	</resultMap>
+
+	<select id="selectBoardList" resultMap="boardResultMap">
+		SELECT * FROM boards
+	</select>
+</mapper>
